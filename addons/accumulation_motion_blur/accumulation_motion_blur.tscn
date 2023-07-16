@@ -5,7 +5,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0orva"]
 shader = ExtResource("1_xwiye")
-shader_parameter/strength = 0.8
+shader_parameter/strength = 0.6667
 
 [node name="SubViewportContainer" type="SubViewportContainer"]
 material = SubResource("ShaderMaterial_0orva")
@@ -17,6 +17,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Feedback" type="SubViewport" parent="."]
-size = Vector2i(3268, 1771)
+handle_input_locally = false
+size = Vector2i(3268, 1663)
 render_target_update_mode = 4
 script = ExtResource("2_j8y6v")
