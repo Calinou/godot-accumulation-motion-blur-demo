@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxnujfey7cyl0"]
+
+[ext_resource type="Shader" path="res://addons/accumulation_motion_blur/accumulation_motion_blur.gdshader" id="1_xwiye"]
+[ext_resource type="Script" path="res://addons/accumulation_motion_blur/feedback.gd" id="2_j8y6v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0orva"]
+shader = ExtResource("1_xwiye")
+shader_parameter/strength = 0.8
+
+[node name="SubViewportContainer" type="SubViewportContainer"]
+material = SubResource("ShaderMaterial_0orva")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Feedback" type="SubViewport" parent="."]
+size = Vector2i(3268, 1771)
+render_target_update_mode = 4
+script = ExtResource("2_j8y6v")
